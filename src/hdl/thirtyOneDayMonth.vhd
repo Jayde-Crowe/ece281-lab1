@@ -56,24 +56,68 @@ library ieee;
 entity thirtyOneDayMonth is 
   port(
 	i_A : in std_logic; -- one of four inputs
+	i_B: in std_logic;
+	i_C: in std_logic;
+	i_D: in std_logic;
 	
+	-- output
 	
-	
-						-- output
+	o_Y: out std_logic
   );
 end thirtyOneDayMonth;
 
 architecture thirtyOneDayMonth_arch of thirtyOneDayMonth is 
 	-- include components declarations and signals
 	
+	signal w_sel : std_logic_vector (2 downto 0); -- MUX set
+	
+
+	
+	component MUX_8T1 is
+        Port ( SEL : in std_logic_vector (2 downto 0);
+               D_IN : in std_logic_vector (7 downto 0);
+               F : out STD_LOGIC);
+    end component MUX_8T1;
+
+	
+	
+	
 	--signals internal to the architecture are declared and initialized such as w_sel
+
   
 begin
+
+    
+    
 	-- CONCURRENT STATEMENTS---------------------------------------
 	--assigning names to reflect original schematics (for ease of understanding if you wish to)
 	w_sel(0) <= i_C;	-- one
 	--finish assigning signals
 	
-	--enter your logic here to implement the mux.  See VHDL reference sheet for MUX syntax.	
+	w_sel(1) <= i_B;
+	w_sel(2) <= i_A;
+	
+	led[0] <= o_Y;
+	
+	--enter your logic here to implement the mux.  See VHDL reference sheet for MUX syntax.
+	
+	myMux_inst: MUX_8T1
+        Port map( 
+        SEL => w_sel,
+        D_IN(0) => D,
+        D_IN(1) => D,
+        D_IN(2) => D,
+        D_IN(3) => D,
+        D_IN(4) => not D,
+        D_IN(5) => not D,
+        D_IN(6) => not D,
+        D_IN(7) => not D,
+        F =>
+        );
+
+	
+	
+	
+	
 	---------------------------------------------------------------	
 end thirtyOneDayMonth_arch;

@@ -70,6 +70,7 @@ architecture test_bench of thirtyOneDayMonth_tb is
   
   signal w_sw : std_logic_vector (3 downto 0):= (others=> '0');
   signal w_Y : std_logic := '0';
+  
 
   
 begin
@@ -93,7 +94,36 @@ begin
 		w_sw <= x"0"; wait for 10 ns;
             assert w_Y = '0' report "error on x0" severity failure;
         w_sw <= x"1"; wait for 10 ns;
-            assert w_Y = '1' report "error on Jan" severity failure;   
+            assert w_Y = '1' report "error on Jan" severity failure;
+        w_sw <= x"2"; wait for 10 ns;
+            assert w_Y = '0' report "error on Feb" severity failure;
+        w_sw <= x"3"; wait for 10 ns;
+            assert w_Y = '1' report "error on March" severity failure;
+        w_sw <= x"4"; wait for 10 ns;
+            assert w_Y = '0' report "error on April" severity failure;
+        w_sw <= x"5"; wait for 10 ns;
+            assert w_Y = '1' report "error on May" severity failure;
+        w_sw <= x"6"; wait for 10 ns;
+            assert w_Y = '0' report "error on June" severity failure;
+        w_sw <= x"7"; wait for 10 ns;
+            assert w_Y = '1' report "error on July" severity failure;
+        w_sw <= x"8"; wait for 10 ns;
+             assert w_Y = '1' report "error on Aug" severity failure;
+        w_sw <= x"9"; wait for 10 ns;
+             assert w_Y = '0' report "error on Sept" severity failure;
+        w_sw <= x"10"; wait for 10 ns;
+             assert w_Y = '1' report "error on Oct" severity failure;
+        w_sw <= x"11"; wait for 10 ns;
+             assert w_Y = '0' report "error on Nov" severity failure;
+        w_sw <= x"12"; wait for 10 ns;
+             assert w_Y = '1' report "error on Dec" severity failure;
+        w_sw <= x"13"; wait for 10 ns;
+             assert w_Y = '0' report "error on 0x13" severity failure;
+         w_sw <= x"14"; wait for 10 ns;
+             assert w_Y = '0' report "error on 0x14" severity failure;
+        w_sw <= x"15"; wait for 10 ns;
+              assert w_Y = '0' report "error on 0x15" severity failure;
+               
 
 		wait; -- wait forever
 	end process;	
