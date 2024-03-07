@@ -98,15 +98,14 @@ begin
 	
 	w_sel(1) <= i_B;
 	w_sel(2) <= i_A;
-	
 	w_nD <= not i_D;
 	
 	
 	
 	--enter your logic here to implement the mux.  See VHDL reference sheet for MUX syntax.
 	
-	myMux_inst: MUX_8T1
-        Port map( 
+	MUX_8T1_inst: MUX_8T1
+        port map( 
         SEL => w_sel,
         D_IN(0) => i_D,
         D_IN(1) => i_D,
