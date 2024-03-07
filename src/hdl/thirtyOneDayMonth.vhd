@@ -104,7 +104,7 @@ begin
 	
 	--enter your logic here to implement the mux.  See VHDL reference sheet for MUX syntax.
 	
-	myMux: MUX_8T1
+	MUX_8T1_inst: MUX_8T1
         port map( 
         SEL => w_sel,
         D_IN(0) => i_D,
