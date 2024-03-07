@@ -111,9 +111,9 @@ begin
              assert w_Y = '1' report "error on Aug" severity failure;
         w_sw <= x"9"; wait for 10 ns;
              assert w_Y = '0' report "error on Sept" severity failure;
-        w_sw <= x"10"; wait for 10 ns;
+        w_sw <= "10"; wait for 10 ns;
              assert w_Y = '1' report "error on Oct" severity failure;
-        w_sw <= x"11"; wait for 10 ns;
+        w_sw <= "11"; wait for 10 ns;
              assert w_Y = '0' report "error on Nov" severity failure;
         w_sw <= x"12"; wait for 10 ns;
              assert w_Y = '1' report "error on Dec" severity failure;

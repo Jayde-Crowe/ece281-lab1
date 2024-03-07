@@ -71,6 +71,8 @@ architecture thirtyOneDayMonth_arch of thirtyOneDayMonth is
 	
 	signal w_sel : std_logic_vector (2 downto 0); -- MUX set
 	
+	signal w_nD : std_logic;
+	
 
 	
 	component MUX_8T1 is
@@ -97,22 +99,24 @@ begin
 	w_sel(1) <= i_B;
 	w_sel(2) <= i_A;
 	
-	led[0] <= o_Y;
+	w_nD <= not i_D;
+	
+	
 	
 	--enter your logic here to implement the mux.  See VHDL reference sheet for MUX syntax.
 	
 	myMux_inst: MUX_8T1
         Port map( 
         SEL => w_sel,
-        D_IN(0) => D,
-        D_IN(1) => D,
-        D_IN(2) => D,
-        D_IN(3) => D,
-        D_IN(4) => not D,
-        D_IN(5) => not D,
-        D_IN(6) => not D,
-        D_IN(7) => not D,
-        F =>
+        D_IN(0) => i_D,
+        D_IN(1) => i_D,
+        D_IN(2) => i_D,
+        D_IN(3) => i_D,
+        D_IN(4) => w_nD,
+        D_IN(5) => w_nD,
+        D_IN(6) => w_nD,
+        D_IN(7) => w_nD,
+        F => o_Y
         );
 
 	
