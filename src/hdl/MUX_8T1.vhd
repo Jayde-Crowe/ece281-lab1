@@ -37,7 +37,7 @@ entity MUX_8T1 is
            F : out STD_LOGIC);
 end MUX_8T1;
 
-architecture myMux of MUX_8T1 is
+architecture Behavioral of MUX_8T1 is
 
 begin
 
@@ -52,4 +52,4 @@ begin
             D_IN(7);
 
 
-end myMux;
+end Behavioral;

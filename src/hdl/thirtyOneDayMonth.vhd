@@ -66,7 +66,7 @@ entity thirtyOneDayMonth is
   );
 end thirtyOneDayMonth;
 
-architecture thirtyOneDayMonth_arch of thirtyOneDayMonth is 
+architecture Bahavioral of thirtyOneDayMonth is 
 	-- include components declarations and signals
 	
 	signal w_sel : std_logic_vector (2 downto 0); -- MUX set
@@ -123,4 +123,4 @@ begin
 	
 	
 	---------------------------------------------------------------	
-end thirtyOneDayMonth_arch;
+end Bahavioral;
