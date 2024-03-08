@@ -79,7 +79,7 @@ architecture Bahavioral of thirtyOneDayMonth is
        port ( SEL : in std_logic_vector (2 downto 0);
                D_IN : in std_logic_vector (7 downto 0);
                F : out STD_LOGIC);
-    end component MUX_8T1;
+    end component;
 
 	
 	
